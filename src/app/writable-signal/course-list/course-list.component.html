@@ -1,0 +1,67 @@
+<!-- <h3 class="text-center">Normal list</h3>
+<div class="course-list">
+
+    @for(course of courses; track course.id) {
+      <div class="course-card">
+        <img [src]="course.imageUrl" alt="{{ course.title }}">
+        <h3>{{ course.title }}</h3>
+        <p>{{ course.description }}</p>
+        <button class="course-button">Voir Plus</button>
+      </div>
+    }@empty {
+        <h2 class="text-center">No courses available</h2>
+    }
+</div> -->
+
+<!-- -------------------------------------------------------------------------- -->
+<!-- Writable  -->
+<div class="p-3">
+    <div class="d-flex justify-content-center align-items-center gap-2">
+        <!-- Input Search Field -->
+        <mat-form-field class="example-form-field flex-grow-1"
+            style="max-width: 400px; height: 75px;">
+            <mat-label>Search</mat-label>
+            <input matInput type="text" [ngModel]="searchText()"
+                (ngModelChange)="updateSearchText($event)">
+        </mat-form-field>
+
+        <!-- Search Button -->
+        <!-- <button mat-raised-button class="btn btn-info" (click)="onClick()">Search</button>
+        <div class="demo-section">
+            <button mat-raised-button matBadge="{{selectedCourses()}}" matBadgePosition="before" (click)="openActionDialog()">
+              Action
+            </button>
+          </div> -->
+    </div>
+</div>
+<hr>
+
+<h3 class="text-center">Signal List</h3>
+<div class="course-list">
+
+    @for (course of coursesCmoputed(); track course.id) {
+    <div class="course-card card shadow-sm m-3">
+        <img [src]="course.imageUrl" class="card-img-top"
+            alt="{{ course.title }}">
+        <div class="card-body">
+            <h3 class="card-title text-primary">{{ course.title }}</h3>
+            <p class="card-text">{{ course.description }}</p>
+            <p class="text-success">
+                <strong>{{ course.prix }} MRU</strong>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+                @if (course.selected) {
+                <button class="btn btn-success"
+                    (click)="select(course)">Sélectionné</button>
+                } @else {
+                <button class="btn btn-outline-primary"
+                    (click)="select(course)">Sélectionner</button>
+                }
+                <button class="btn btn-secondary">Voir Plus</button>
+            </div>
+        </div>
+    </div>
+    } @empty {
+    <h2 class="text-center">No courses available</h2>
+    }
+</div>

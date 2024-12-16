@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  td {
+    padding: 12px;
+    vertical-align: middle;
+  }
+  
+  .mat-dialog-actions button {
+    font-weight: bold;
+    border-radius: 0px;
+    outline:none ;
+    padding: 0;
+  }
+  
+  button.btn-outline-danger {
+    transition: all 0.3s ease;
+    outline: none;
+    
+  }
+  
+  button.btn-outline-danger:hover {
+    background-color: #ffcccc;
+    border-color: #ff5252;
+    outline: none;
+  }
+  .btn-custom-delete{
+    color: #ff5252;
+    padding: 0px;
+  }
+  .btn-custom-delete:hover{
+    color: #5c3535;
+  }

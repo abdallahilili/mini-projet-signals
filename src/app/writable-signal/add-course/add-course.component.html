@@ -1,0 +1,35 @@
+<div  class="custom-form-field p-4">
+    <form [formGroup]="courseForm" (ngSubmit)="save()" >
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <input placeholder="Titre de cours" type="text"
+                            class="form-control" formControlName="title">
+                    </td>   
+                    <td>
+                        <input placeholder="Prix" type="number" 
+                            class="form-control text-end" formControlName="prix">
+                    </td>
+                    <td>
+                        <strong>MRU</strong>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input placeholder="description" type="text"
+                            style="min-width: 600px;" class="form-control"
+                            formControlName="description">
+                    </td>
+                   
+                    <td span="2">
+                        <button mat-raised-button class="btn btn-primary">
+                            Enregistrer
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>

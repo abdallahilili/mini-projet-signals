@@ -1,0 +1,274 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+
+.btn-custom {
+    background: linear-gradient(to right, #051eac, #4c74e0, #0f3896);
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: large;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease; /* Ajoute une transition pour un effet plus fluide */
+}
+
+.btn-custom .icon {
+    margin-right: -30px;
+    transition: margin-right 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(to right, #4c74e0, #051eac, #0f3896);
+    font-weight: bold;
+}
+
+.btn-custom:hover .icon {
+    margin-right: 4px;
+    opacity: 1;
+}
+
+
+/* Cursor */
+.cursor {
+    position: relative;
+    width: 64em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    font-size: 70px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+/* Animation */
+.typewriter-animation {
+    animation:
+        typewriter 5s steps(31) 1s 1 normal both,
+        blinkingCursor 500ms steps(31) infinite normal;
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 73%;
+    }
+}
+
+@keyframes blinkingCursor {
+    from {
+        border-right-color: rgba(255, 0, 0, 0.75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+
+.bg-animation {
+    background: linear-gradient(to right, #051eac, #083cad, #309df0, #3e62f5, #4e72f4, #5e82f3, #0d266b, #0f3896);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 69px;
+    font-weight: bold;
+    font-family: 'Anonymous Pro', monospace;
+
+}
+
+@media (max-width: 992px) {
+    .cursor {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cursor {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cursor {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 400px) {
+    .cursor {
+        font-size: 20px;
+    }
+}
+
+/* cards */
+.section_our_solution .row {
+    align-items: flex-start  !important; 
+}
+
+.our_solution_category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* pour équilibrer l'espace à gauche et à droite des cartes */
+    min-height: 300px;
+}
+
+.our_solution_category .solution_cards_box {
+    display: flex;
+    flex-basis: calc(50% - 20px); /* 50% moins une marge pour que deux cartes tiennent par ligne avec un espace uniforme */
+    margin-bottom: 20px; /* Espacement entre les lignes de cartes */
+    box-sizing: border-box; /* Pour que le padding et la marge n'affectent pas la taille totale des éléments */
+}
+
+.solution_cards_box .solution_card {
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(46, 48, 61, 0.2),
+        0 5px 15px 0 rgba(37, 44, 97, 0.15);
+    border-radius: 15px;
+    margin: 20px;
+    padding: 10px 15px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 290px;
+    min-width: 260px;
+    transition: 0.7s;
+}
+
+.solution_cards_box .solution_card:hover {
+    background: #4378b1;
+    color: #fff;
+    transform: scale(1.1);
+    z-index: 9;
+}
+
+.solution_cards_box .solution_card:hover::before {
+    background: rgba(85, 108, 214, 0.1);
+}
+
+.solution_cards_box .solution_card:hover .solu_title h3,
+.solution_cards_box .solution_card:hover .solu_description p {
+    color: #fff;
+}
+
+.solution_cards_box .solution_card:before {
+    content: "";
+    position: absolute;
+    background: rgba(85, 108, 214, 0.05);
+    width: 170px;
+    height: 400px;
+    z-index: -1;
+    transform: rotate(42deg);
+    right: -56px;
+    top: -23px;
+    border-radius: 35px;
+}
+
+.solution_cards_box .solution_card:hover .solu_description button {
+    background: #fff !important;
+    color: #0f3896;
+}
+
+.solution_card .solu_title h3 {
+    color: #212121;
+    font-size: 1.3rem;
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
+
+.solution_card .solu_description p {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.solution_card .solu_description button {
+    border: 0;
+    border-radius: 15px;
+    background: linear-gradient(140deg, #051eac 0%, #4c74e0 50%, #0f3896 75%);
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 16px;
+}
+
+.our_solution_content h1 {
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.hover_color_bubble {
+    position: absolute;
+    background: rgba(54, 81, 207, 0.15);
+    width: 100rem;
+    height: 100rem;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    top: 16rem;
+    border-radius: 50%;
+    transform: rotate(-36deg);
+    left: -18rem;
+    transition: 0.7s;
+}
+
+.solution_cards_box .solution_card:hover .hover_color_bubble {
+    top: 0rem;
+}
+
+.solution_cards_box .solution_card .so_top_icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.solution_cards_box .solution_card .so_top_icon img {
+    width: 40px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* start media query */
+@media screen and (min-width: 320px) {
+    .sol_card_top_3 {
+        position: relative;
+        top: 0;
+    }
+
+    .our_solution_category {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .our_solution_category .solution_cards_box {
+        flex: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .our_solution_category .solution_cards_box {
+        flex: calc(50% - 20px); /* pour que deux cartes tiennent par ligne avec un espace entre elles */
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .sol_card_top_3 {
+        position: relative;
+        top: -3rem;
+    }
+
+    .our_solution_category {
+        width: 50%;
+        margin: 0 auto;
+    }
+}

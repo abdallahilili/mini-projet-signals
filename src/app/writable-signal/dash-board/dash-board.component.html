@@ -1,0 +1,26 @@
+<div class="p-3">
+  <div class="d-flex justify-content-center align-items-center gap-2">
+    <!-- Input Search Field -->
+    <div class="example-form-field flex-grow-1 custom-form-field">
+      <input id="search-input" type="text" [(ngModel)]="searchText" placeholder="Search">
+      <i class="fas fa-search icon"></i>
+    </div>
+
+    <!-- Search Button -->
+    <button mat-raised-button class="btn btn-info" (click)="toggleAddCourse()">Ajouter un cours</button>
+
+    <!-- Action Button -->
+    <div class="p-1"  matBadge="{{selectedCoursesCount()}}" matBadgePosition="before">
+   
+        <img [src]="'/assets/images/shopping-cart.png'" class="w-50" (click)="openActionDialog()" >
+     
+    </div>
+  </div>
+</div>
+
+<div  *ngIf="showAddCourse" class="d-flex justify-content-center align-items-center gap-2">
+<hr>
+<!-- Conditionally Render Add Course Component -->
+<app-add-course></app-add-course>
+
+</div>

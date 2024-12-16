@@ -1,0 +1,37 @@
+<app-dash-board></app-dash-board>
+
+<hr>
+
+<!-- <h3 class="text-center">Liste de Cours </h3> -->
+<div class="course-list">
+
+    @for (course of courses(); track course.id) {
+    <div class="course-card card shadow-sm m-3">
+        <img [src]="course.imageUrl" class="card-img-top"
+            alt="{{ course.title }}">
+        <div class="card-body">
+            <h3 class="card-title text-primary">{{ course.title }}</h3>
+            <p class="card-text">{{ course.description }}</p>
+            <p class="text-success">
+                <strong>{{ course.prix }} MRU</strong>
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+                @if (course.selected) {
+                <button class="btn btn-success"
+                    (click)="select(course)">Sélectionné</button>
+                } @else {
+                <button class="btn btn-outline-primary"
+                    (click)="select(course)">Sélectionner</button>
+                }
+                <button class="btn btn-danger" (click)="suprimmer(course)">Suprimmer</button>
+
+            </div>
+            <div class="text-end pt-3">
+                <a class="custom-lien" href="#">Voir Plus <strong style="font-family:'Courier New', Courier, monospace">>></strong></a>
+            </div>
+        </div>
+    </div>
+    } @empty {
+    <h2 class="text-center">No courses available</h2>
+    }
+</div>

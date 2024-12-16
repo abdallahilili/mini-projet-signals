@@ -1,0 +1,39 @@
+.custom-form-field {
+    background-color: #f9f9f9;
+    border-radius: 25px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.custom-form-field:focus-within {
+    box-shadow: 0 6px 10px rgba(0, 84, 255, 0.2); /* Bleu clair pour focus */
+}
+
+.custom-form-field input {
+    font-size: 16px;
+    color: #030c1f; /* Bleu foncé pour le texte de l'input */
+    border-color: #0a62be; /* Utilisation du même bleu pour les bordures */
+    outline: none;
+    flex-grow: 1;
+    background: transparent;
+}
+.custom-form-field input[type="number"] {
+    font-size: 16px;
+    color: #0055ff; /* Bleu foncé pour le texte de l'input */
+    outline: none;
+    flex-grow: 1;
+    background: transparent;
+    border: none; /* Suppression de la bordure */
+    appearance: textfield; /* Pour les autres navigateurs */
+}
+
+
+
+.custom-form-field .icon {
+    color: #0055ff; /* Bleu clair pour les icônes */
+    margin-left: 10px;
+    font-size: 20px;
+}
