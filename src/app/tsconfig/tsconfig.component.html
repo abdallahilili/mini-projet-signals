@@ -1,1 +1,170 @@
-<p>tsconfig works!</p>
+<!DOCTYPE html>
+<div class="container my-4 bg bg-light p-2">
+    <div mat class="card p-3 card-custom test-dark">
+        <h2 class="txt-custom">Fichier tsconfig.ts</h2>
+        <br>
+        Le fichier tsconfig.ts est un fichier de configuration essentiel dans
+        les projets TypeScript et Angular. Il définit les options du compilateur
+        TypeScript et les paramètres spécifiques à Angular.
+    </div>
+    <br>
+    <div mat class="card p-3 card-custom test-dark">
+        <h2 class="txt-custom">Structure et Contenu</h2>
+        <br>
+
+        <div class="code-block">
+            <div
+                style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+                <div style="flex: 1; text-align: left; padding: 10px;">
+                    <span>code : </span>
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>
+            &#123;
+            "compileOnSave": false,
+            "compilerOptions": &#123;
+                "outDir": "./dist/out-tsc",
+                "strict": true,
+                ...
+                &#125;
+            &#125;</pre>
+            </div>
+        </div>
+        <ul>
+            <li>"<strong class="txt-custom">compileOnSave</strong>" : Détermine
+                si le projet doit être recompilé automatiquement lors de la
+                sauvegarde des fichiers. Dans Angular, cette option est
+                généralement désactivée (false) car la compilation est gérée par
+                le CLI Angular.</li>
+        </ul>
+
+        <br>
+        <div class="code-block">
+            <div
+                style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+                <div style="flex: 1; text-align: left; padding: 10px;">
+                    <span>code : </span>
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>
+                &#123;
+                "compilerOptions": &#123;
+                    "outDir": "./dist/out-tsc",
+                    "strict": true,
+                    "noImplicitOverride": true,
+                    "noPropertyAccessFromIndexSignature": true,
+                    "noImplicitReturns": true,
+                    "noFallthroughCasesInSwitch": true,
+                    "skipLibCheck": true,
+                    "isolatedModules": true,
+                    "esModuleInterop": true
+                    &#125;
+                &#125;</pre>
+            </div>
+        </div>
+        <ul>
+            <li>"<strong class="txt-custom">outDir</strong>" : Spécifie le
+                répertoire de sortie pour les fichiers JavaScript compilés.</li>
+            <li>"<strong class="txt-custom">strict</strong>" : Active toutes les
+                options de vérification stricte de TypeScript pour une meilleure
+                sécurité de type.</li>
+            <li>"<strong class="txt-custom">noImplicitOverride</strong>" : Exige
+                que le mot-clé 'override' soit utilisé lors de la surcharge des
+                méthodes.</li>
+            <li>"<strong
+                    class="txt-custom">noPropertyAccessFromIndexSignature</strong>"
+                : Interdit l'accès aux propriétés via la notation par points
+                pour les types avec des signatures d'index.</li>
+            <li>"<strong class="txt-custom">noImplicitReturns</strong>" : Assure
+                que toutes les branches de code dans une fonction retournent une
+                valeur.</li>
+            <li>"<strong class="txt-custom">noFallthroughCasesInSwitch</strong>"
+                : Signale les erreurs pour les cas de switch qui passent à
+                travers sans break.</li>
+            <li>"<strong class="txt-custom">skipLibCheck</strong>" : Ignore la
+                vérification des fichiers de déclaration (*.d.ts) pour améliorer
+                la vitesse de compilation.</li>
+            <li>"<strong class="txt-custom">isolatedModules</strong>" : Assure
+                que chaque fichier peut être compilé indépendamment.</li>
+            <li>"<strong class="txt-custom">esModuleInterop</strong>" : Permet
+                une meilleure interopérabilité entre les modules CommonJS et
+                ES6.</li>
+        </ul>
+
+        <br>
+        <div class="code-block">
+            <div
+                style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+                <div style="flex: 1; text-align: left; padding: 10px;">
+                    <span>code : </span>
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>
+                &#123;
+                "compilerOptions": &#123;
+                    "experimentalDecorators": true,
+                    "moduleResolution": "bundler",
+                    "importHelpers": true,
+                    "target": "ES2022",
+                    "module": "ES2022"
+                    &#125;
+                &#125;</pre>
+            </div>
+        </div>
+        <ul>
+            <li>"<strong class="txt-custom">experimentalDecorators</strong>" :
+                Active le support des décorateurs, une fonctionnalité
+                essentielle pour Angular.</li>
+            <li>"<strong class="txt-custom">moduleResolution</strong>" : Définit
+                comment TypeScript résout les imports. "bundler" est optimisé
+                pour les bundlers modernes.</li>
+            <li>"<strong class="txt-custom">importHelpers</strong>" : Permet
+                l'importation des helpers tslib pour réduire la taille du code
+                généré.</li>
+            <li>"<strong class="txt-custom">target</strong>" : Spécifie la
+                version d'ECMAScript pour le code JavaScript généré.</li>
+            <li>"<strong class="txt-custom">module</strong>" : Définit le
+                système de modules pour le code généré (ES2022 pour les modules
+                ES6 modernes).</li>
+        </ul>
+
+        <br>
+        <div class="code-block">
+            <div
+                style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+                <div style="flex: 1; text-align: left; padding: 10px;">
+                    <span>code : </span>
+                </div>
+            </div>
+            <div class="code-block">
+                <pre>
+                    &#123;
+                "angularCompilerOptions": &#123;
+                    "enableI18nLegacyMessageIdFormat": false,
+                    "strictInjectionParameters": true,
+                    "strictInputAccessModifiers": true,
+                    "strictTemplates": true
+                    &#125;
+                &#125;</pre>
+            </div>
+        </div>
+        <ul>
+            <li>"<strong
+                    class="txt-custom">enableI18nLegacyMessageIdFormat</strong>"
+                : Désactive le format legacy des IDs de messages pour
+                l'internationalisation.</li>
+            <li>"<strong class="txt-custom">strictInjectionParameters</strong>"
+                : Active la vérification stricte des paramètres d'injection de
+                dépendances.</li>
+            <li>"<strong class="txt-custom">strictInputAccessModifiers</strong>"
+                : Applique des vérifications strictes sur les modificateurs
+                d'accès des entrées des composants.</li>
+            <li>"<strong class="txt-custom">strictTemplates</strong>" : Active
+                la vérification stricte des templates Angular pour une meilleure
+                détection des erreurs.</li>
+        </ul>
+    </div>
+</div>

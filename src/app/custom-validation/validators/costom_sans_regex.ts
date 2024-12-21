@@ -58,7 +58,7 @@ export function emailValidator1(): ValidatorFn {
       if (!password) return null;
   
       // Vérifie les critères de base :
-      const lengthValid = password.length >= 6; // Longueur minimale de 6
+      const lengthValid = password.length >= 8; // Longueur minimale de 6
       const hasSymbol = [...password].some((char) => !"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".includes(char)); // Contient un symbole
       const hasNumber = [...password].some((char) => "0123456789".includes(char)); // Contient un chiffre
       const isValid = lengthValid && hasSymbol && hasNumber;

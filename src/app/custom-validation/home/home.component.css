@@ -1,11 +1,100 @@
-.container {
-    text-align: center;
-    margin-top: 50px;
-  }
-  button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
+.example-action-buttons {
+  padding-bottom: 20px;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
+  margin-left: 8px;
+}
+
+.card-custom {
+  background-color: #f8f9fa; /* Couleur de fond claire */
+  border-radius: 8px; /* Bordure arrondie */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre pour le relief */
+  padding: 1rem; /* Espace interne */
+  border: 1px solid #dee2e6; /* Bordure légère */
+  transition: box-shadow 0.3s ease-in-out; /* Animation de la boîte */
+}
+
+.card-custom:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+}
+
+.txt-custom{
+color: #0f3896;
+}
+.img-custom{
+border-radius: 20px;
+width: 670px;
+}
+
+.code-block {
+background-color: #2d2d2d; /* Fond sombre */
+color: #f8f8f2; /* Texte clair */
+border-radius: 5px;
+padding: 0; /* Padding défini à zéro */
+overflow-x: auto;
+font-family: 'Courier New', Courier, monospace;
+font-size: 18px;
+margin: 10px 0;
+line-height: 1.5;
+}
+
+code {
+display: block;
+white-space: pre-wrap;
+}
+.non-clair{
+color: rgb(129, 129, 129);
+} 
+
+.btn-voir-expl{
+background: #fff !important;
+color: #0f3896;
+}
+
+.btn-voir-expl:hover{
+background: #0f3896 !important;
+color: #fff;
+}
+.code-block-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: rgb(68, 68, 75);
+color: white;
+padding: 10px 15px;
+font-family: 'Times New Roman', Times, serif;
+font-size: 15px;
+}
+
+.code-block-header .code-label {
+text-align: left;
+}
+
+.code-block-header .code-link {
+text-align: right;
+display: flex;
+align-items: center;
+}
+
+.code-block-header .code-link-text {
+margin-right: 5px;
+}
+
+.code-block-header .code-link-icon {
+font-size: 18px;
+vertical-align: middle;
+}
+.link{
+color: #dee2e6;
+text-decoration: none;
+
+}
+.link:hover {
+color: #9bb2e7;
+}

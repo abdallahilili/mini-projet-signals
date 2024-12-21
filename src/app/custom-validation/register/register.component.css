@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #f8f9fa;
   }
   
   .registration-card {
@@ -11,6 +11,7 @@
     max-width: 500px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
   }
   
   .registration-form {
@@ -30,3 +31,24 @@
       margin: 0 5%;
     }
   }
+  .txt-custom{
+    color: #0f3896;
+  }
+
+  .validation-messages p {
+    margin: 0;
+    color: red;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .validation-messages p.valid {
+    color: green;
+  }
+  
+  .validation-messages span {
+    margin-right: 5px;
+    font-weight: bold;
+  }
+  

@@ -12,7 +12,7 @@ import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ReactiveFormsModule, MatSidenavModule, MatButtonModule, MatListModule, RouterLink],
+  imports: [RouterOutlet, ReactiveFormsModule, MatSidenavModule, MatButtonModule, MatListModule, RouterLink,MatIcon],
 
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

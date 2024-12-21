@@ -10,6 +10,7 @@ import { BasicSignalComponent } from './writable-signal/basic-signal/basic-signa
 import { HomeComponent } from './custom-validation/home/home.component';
 import { CustomValidationSansRegexComponent } from './custom-validation/custom-validation-sans-regex/custom-validation-sans-regex.component';
 import { RegisterComponent } from './custom-validation/register/register.component';
+import { AgeFormComponent } from './custom-validation/custom-age-validator/custom-age-validator.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,11 +20,15 @@ export const routes: Routes = [
     { path: 'custom-validation', component: HomeComponent },
     { path: 'angular-json', component: AngularJsonComponent },
     { path: 'tsconfig', component: TsconfigComponent },
-    { path: 'courses', component: CoursesCrudComponent},
-    { path: 'basic-sig' , component: BasicSignalComponent},
+    { path: 'courses', component: CoursesCrudComponent },
+    { path: 'basic-sig', component: BasicSignalComponent },
     { path: 'custom-without-regex', component: CustomValidationSansRegexComponent },
-    { path: 'custom-with-regex', component: RegisterComponent },  
+    { path: 'custom-with-regex', component: RegisterComponent },
     // { path: 'register', component: RegisterComponent },
+    {
+        path: 'age-validation',
+        component: AgeFormComponent
+    }
 
 ];
 @NgModule({

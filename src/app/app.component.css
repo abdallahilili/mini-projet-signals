@@ -63,8 +63,12 @@
 }
 .main-content {
   margin-left: 220px; /* Largeur de la sidebar fixée */
+  min-height: 700px;
 }
 
+.gauche-250{
+  margin-left: 220px;
+}
 .example-action-buttons {
   padding-bottom: 20px;
 }

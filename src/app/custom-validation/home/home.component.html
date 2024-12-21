@@ -1,7 +1,267 @@
-<div class="container">
-    <h1>Bienvenue</h1>
-    <p>Choisissez une option pour tester la validation :</p>
-    <button (click)="navigateTo('custom-with-regex')">Custom avec Regex</button>
-    <button (click)="navigateTo('custom-without-regex')">Custom sans Regex</button>
+<div class="container my-4 bg bg-light p-2">
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Custom validation</h2>
+    <br>
+    La validation personnalisée permet de définir des règles spécifiques
+    adaptées aux besoins de l'application,<br> au-delà des validations standard
+    fournies par Angular.
   </div>
-  
+  <br>
+  <!-- Utilisation pratique -->
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Structure d'un validateur personnalisé <i>avec exemple</i></h2>
+    <br>
+    Voici un exemple complet d'implémentation et d'utilisation :
+    <br><br>
+    <h6>1. Définition du validateur</h6>
+    <div class="code-block">
+      <div style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank" href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/custom-validation/validators/custom-validators.ts">
+            <span>voir code complet</span>
+            <mat-icon style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+          // 1. Définition du validateur
+          export function ageValidator(): ValidatorFn &#123;
+            return (control: AbstractControl): ValidationErrors | null =&gt; &#123;
+              const age = control.value;
+              if (age &lt; 18 || age &gt; 100) &#123;
+                return &#123; ageInvalid: true &#125;;
+              &#125;
+              return null;
+            &#125;;
+          &#125;</pre>
+      </div>
+    </div>
+    <p>Points clés d'un validateur personnalisé :</p>
+    <ul>
+      <li>Retourne une fonction qui prend un AbstractControl en paramètre</li>
+      <li>Retourne null si la validation réussit</li>
+      <li>Retourne un objet d'erreur si la validation échoue</li>
+      <li>Peut accéder à la valeur du contrôle via control.value</li>
+    </ul>
+    <br><br>
+    <h6>2. Utilisation dans le formulaire</h6>
+    <div class="code-block">
+      <div class="code-block">
+        <pre>
+          this.form = new FormGroup(&#123;
+            age: ['', [
+              Validators.required,
+              ageValidator()
+            ]]
+          &#125;);</pre>
+      </div>
+    </div>
+    <br><br>
+    <h6>3. Template avec gestion d'erreur</h6>
+    <div class="code-block">
+      <div style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank" href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/custom-validation/validators/custom-validators.ts">
+            <span>voir code complet</span>
+            <mat-icon style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+          &lt;mat-form-field&gt;
+            &lt;input matInput formControlName="age" type="number"&gt;
+            &lt;mat-error *ngIf="form.get('age')?.errors?.['ageInvalid']"&gt;
+              L'âge doit être entre 18 et 100 ans
+            &lt;/mat-error&gt;
+          &lt;/mat-form-field&gt;</pre>
+      </div>
+    </div>
+    <div class="text-end">
+      <a [routerLink]="['/age-validation']" class="btn btn-voir-expl"
+        type="button">Voir la démo de l'exemple</a>
+    </div>
+  </div>
+  <br>
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Exemple : <i>passwordValidator()</i></h2>
+    <br>
+    La fonction passwordValidator illustre bien ce principe en vérifiant si un mot de passe respecte plusieurs critères de sécurité.
+    <div class="code-block">
+      <div style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank" href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/custom-validation/validators/custom-validators.ts">
+            <span>voir code complet</span>
+            <mat-icon style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+          export function passwordValidator() &#123;
+            return (control: AbstractControl): ValidationErrors | null =&gt; &#123;
+              const password = control.value || '';
+              const lengthValid = password.length &gt;= 8;
+              const symbolValid = /[^a-zA-Z0-9\s]/.test(password);
+              const numberValid = /[0-9]/.test(password);
+              const letterValid = /[a-zA-Z]/.test(password);
+              const isValid = lengthValid &amp;&amp; symbolValid &amp;&amp; numberValid &amp;&amp; letterValid;
+              return isValid ? null : &#123; passwordInvalid: true &#125;;
+            &#125;
+          &#125;</pre>
+      </div>
+    </div>
+    <p>
+      Cette fonction valide qu'un mot de passe est suffisamment complexe en s'assurant qu'il respecte les règles suivantes :
+    </p>
+    <ul>
+      <li>Longueur minimale : Le mot de passe doit contenir au moins 8 caractères</li>
+      <li>Présence d'un symbole : Le mot de passe doit inclure au moins un caractère spécial (par exemple, &#64;, #, $, etc.).</li>
+      <li>Présence d'un chiffre : Le mot de passe doit comporter au moins un chiffre (0-9)</li>
+      <li>Présence d'une lettre : Le mot de passe doit inclure au moins une lettre (a-z ou A-Z).</li>
+    </ul>
+    <p>
+      Si le mot de passe respecte toutes ces conditions, la validation retourne null, ce qui signifie que la valeur est valide. Sinon, elle retourne une erreur sous forme d'objet :
+    </p>
+  </div>
+  <br>
+ 
+  <!-- Section pour le validateur de confirmation de mot de passe -->
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Exemple : <i>confirmPasswordValidator()</i></h2>
+    <br>
+    Ce validateur vérifie que la confirmation du mot de passe correspond au mot de passe initial.
+    <div class="code-block">
+      <div style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+          export function confirmPasswordValidator(passwordField: string) &#123;
+            return (control: AbstractControl): ValidationErrors | null =&gt; &#123;
+              if (!control.parent) return null;
+              const password = control.parent.get(passwordField)?.value;
+              const confirmPassword = control.value;
+              return password === confirmPassword ? null : &#123; confirmPassword: true &#125;;
+            &#125;
+          &#125;</pre>
+      </div>
+    </div>
+    <p>Ce validateur est particulier car il :</p>
+    <ul>
+      <li>Compare deux champs du formulaire</li>
+      <li>Utilise le parent du contrôle pour accéder au champ de mot de passe</li>
+      <li>Retourne une erreur si les valeurs ne correspondent pas</li>
+    </ul>
+  </div>
+  <br>
+   <!-- Section pour le validateur d'email -->
+   <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Exemple : <i>emailValidator()</i></h2>
+    <br>
+    Le validateur d'email vérifie que l'adresse email respecte un format valide avec une expression régulière.
+    <div class="code-block">
+      <div style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+          export function emailValidator() &#123;
+            return (control: AbstractControl): ValidationErrors | null =&gt; &#123;
+              const email = control.value || '';
+              const regex = /^[a-zA-Z0-9._-]+&#64;[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;$/;
+              return regex.test(email) ? null : &#123; emailInvalid: true &#125;;
+            &#125;
+          &#125;</pre>
+      </div>
+    </div>
+    <p>Ce validateur vérifie :</p>
+    <ul>
+      <li>La présence d'un caractère &#64; au bon endroit</li>
+      <li>La présence d'un domaine valide</li>
+      <li>L'utilisation de caractères autorisés uniquement</li>
+    </ul>
+  </div>
+  <br>
+  <!-- Section d'utilisation pratique -->
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Utilisation des validateurs</h2>
+    <br>
+    <p>Pour utiliser ces validateurs dans un formulaire réactif :</p>
+    <div class="code-block">
+      <div style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+          this.registerForm = this.fb.group(&#123;
+            email: ['', [Validators.required, emailValidator()]],
+            password: ['', [Validators.required, passwordValidator()]],
+            confirmPassword: ['', [Validators.required, confirmPasswordValidator('password')]]
+          &#125;);</pre>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- Bonnes pratiques -->
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Bonnes pratiques</h2>
+    <br>
+    <ul>
+      <li>Toujours retourner null quand la validation réussit</li>
+      <li>Utiliser des noms d'erreurs descriptifs et cohérents</li>
+      <li>Gérer le cas où la valeur est undefined ou vide</li>
+      <li>Éviter les validations trop complexes qui pourraient impacter les performances</li>
+      <li>Documenter les règles de validation pour faciliter la maintenance</li>
+    </ul>
+  </div>
+<br>
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Les validateurs intégrés essentiels</h2>
+    <br>
+    Angular fournit plusieurs validateurs intégrés qui servent de base avant d'implémenter des validations personnalisées.
+    <div class="code-block">
+      <div style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+          this.form = new FormGroup(&#123;
+            username: ['', [
+              Validators.required,         // Champ obligatoire
+              Validators.minLength(3),     // Longueur minimum
+              Validators.maxLength(10),    // Longueur maximum
+              Validators.pattern('[a-zA-Z]*')  // Expression régulière
+            ]]
+          &#125;);
+        </pre>
+      </div>
+    </div>
+    <ul>
+      <li>required : Vérifie qu'un champ n'est pas vide</li>
+      <li>minLength : Définit une longueur minimale</li>
+      <li>maxLength : Définit une longueur maximale</li>
+      <li>pattern : Vérifie une expression régulière</li>
+    </ul>
+  </div>
+
+  <br>
+</div>

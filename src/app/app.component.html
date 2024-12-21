@@ -1,30 +1,31 @@
-<div class="container-fluid">
+<div class="d-flex flex-column min-vh-100">
+  <div class="container-fluid flex-grow-1">
     <div class="row">
       <!-- Sidebar -->
       <mat-sidenav #sidenav class="col-md-3 col-lg-2 bg-light p-0 sidenav fixed-sidenav" mode="side" [opened]="isSidenavOpened">
-        <div class="p-2 pb-0 d-flex justify-content-between">
+        <div class="p-2 pb-0 d-flex justify-content-center">
           <img [src]="'/assets/images/loho.png'" class="w-75">
         </div>
-  
+
         <mat-nav-list>
           <a mat-list-item class="nav-link py-2" routerLink="/home" routerLinkActive="active">
-            Home
+            &nbsp;<mat-icon class="pt-1">home</mat-icon> <span class="pb-1">&nbsp;&nbsp;&nbsp; Home</span> 
           </a>
           <a mat-list-item class="nav-link py-2" routerLink="/angular-json" routerLinkActive="active">
-            angular.json
+            &nbsp;<img [src]="'/assets/images/angularjs.png'" style="width: 23px;"> <span class="pb-1">&nbsp;&nbsp;&nbsp; angular.json</span>
           </a>
           <a mat-list-item class="nav-link py-2" routerLink="/tsconfig" routerLinkActive="active">
-            tsconfig.ts
+            &nbsp;<img [src]="'/assets/images/file.png'" style="width: 20px;"> <span class="pb-1">&nbsp;&nbsp;&nbsp; tsconfig.ts</span>
           </a>
           <a mat-list-item class="nav-link py-2" routerLink="/signals" routerLinkActive="active">
-            Signals
+            &nbsp;<img [src]="'/assets/images/wifi-signal.png'" style="width: 20px;"> <span class="pb-1">&nbsp;&nbsp;&nbsp;  Signals</span>
           </a>
           <a mat-list-item class="nav-link py-2" routerLink="/custom-validation" routerLinkActive="active">
-            Custom Validation
+            &nbsp;  <img [src]="'/assets/images/password.png'" class="pl-1" style="width: 20px;"> <span class="pb-1">&nbsp;&nbsp;&nbsp;  Custom Validation </span>
           </a>
         </mat-nav-list>
       </mat-sidenav>
-  
+
       <!-- Main Content -->
       <main class="col-md-9 col-lg-10 px-md-4 main-content">
         <div class="content">
@@ -33,4 +34,47 @@
       </main>
     </div>
   </div>
+
   
+  <!-- Pied de page -->
+  <footer class="custom-bg text-white py-3 gauche-250 ">
+    <div class="container mb-5 mt-3">
+      <div class="row">
+        <!-- Colonne Membres de l'équipe -->
+        <div class="col-md-4 text-start">
+          <h6>Membres de l'équipe :</h6>
+          <ul class="list-unstyled list-group list-group-flush p-3 pt-0">
+            <li>IE20863 Eladel Mahmouden</li>
+            <li>IE20886 Melika Mahmoud Kharoub</li>
+            <li>IE20865 Oum Elkheir Ahmed Zeidane</li>
+            <li>IE20862 Abdallahi Mohamed Lemine Lili</li>
+            <li>IE20962 Mohamed Cheikh Tijani</li>
+          </ul>
+        </div>
+
+        <!-- Colonne Copyright -->
+        <div class="col-md-4 text-center d-flex flex-column justify-content-center">
+          <span>&copy; 2024 Moada. Tous droits réservés.</span>
+          <div class="mt-2">
+            <a href="/privacy-policy" class="text-white me-3">Politique de Confidentialité</a><br>
+            <a href="/terms-of-service" class="text-white">Conditions d'Utilisation</a>
+          </div>
+        </div>
+
+        <!-- Colonne Réseaux Sociaux -->
+        <div class="col-md-4 text-center">
+          <div class="p-2 pb-0 d-flex justify-content-center">
+            <img [src]="'/assets/images/loho2.png'" class="w-25">
+          </div>
+          <h6>Suivez-nous</h6>
+          <a href="https://facebook.com" target="_blank" class="text-white me-3">
+            <mat-icon>facebook</mat-icon>
+          </a>
+          <a href="https://ab-lili-cv.w3spaces.com/" target="_blank" class="text-white">
+            <mat-icon>link</mat-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>

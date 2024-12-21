@@ -61,3 +61,40 @@ code {
   background: #0f3896 !important;
   color: #fff;
 }
+.code-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(68, 68, 75);
+  color: white;
+  padding: 10px 15px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+}
+
+.code-block-header .code-label {
+  text-align: left;
+}
+
+.code-block-header .code-link {
+  text-align: right;
+  display: flex;
+  align-items: center;
+}
+
+.code-block-header .code-link-text {
+  margin-right: 5px;
+}
+
+.code-block-header .code-link-icon {
+  font-size: 18px;
+  vertical-align: middle;
+}
+.link{
+  color: #dee2e6;
+  text-decoration: none;
+
+}
+.link:hover {
+  color: #9bb2e7;
+}

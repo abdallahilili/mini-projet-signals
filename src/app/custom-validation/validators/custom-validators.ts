@@ -1,15 +1,6 @@
 // src/app/validators/custom-validators.ts
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
-// Validator pour vérifier la longueur minimale du nom d'utilisateur
-// export function usernameValidator(minLength: number): ValidatorFn {
-//   return (control: AbstractControl): ValidationErrors | null => {
-//     // console.log('in validator in',control);
-
-//     const isValid = control.value && control.value.length >= minLength;
-//     return isValid ? null : { usernameInvalid: true };
-//   };
-// }
 export function usernameValidator(minLength: number): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const value = control.value;
@@ -31,15 +22,7 @@ export function usernameValidator(minLength: number): ValidatorFn {
     return null;
   };
 }
-// Validator pour valider l'email
-// export function emailValidator(): ValidatorFn {
-//   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//   return (control: AbstractControl): ValidationErrors | null => {
-//     console.log('in validator in',control);
-//     const isValid = emailRegex.test(control.value);
-//     return isValid ? null : { emailInvalid: true };
-//   };
-// }
+
 
 export function emailValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -59,14 +42,18 @@ export function emailValidator(): ValidatorFn {
 }
 
 // Validator pour valider la force du mot de passe
+
 export function passwordValidator(): ValidatorFn {
+  
+
   return (control: AbstractControl): ValidationErrors | null => {
     const password = control.value || '';
-    const lengthValid = password.length >= 6;
+    const lengthValid = password.length >= 8;
     const symbolValid = /[^a-zA-Z0-9\s]/.test(password);
     const numberValid = /[0-9]/.test(password);
+    const letterValid = /[a-zA-Z]/.test(password);
 
-    const isValid = lengthValid && symbolValid && numberValid;
+    const isValid = lengthValid && symbolValid && numberValid && letterValid;
     return isValid ? null : { passwordInvalid: true };
   };
 }

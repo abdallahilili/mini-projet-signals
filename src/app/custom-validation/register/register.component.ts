@@ -20,10 +20,13 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-onSubmit() {
-throw new Error('Method not implemented.');
-}
+
   registerForm: FormGroup;
+ // États des messages
+ showMinLengthMessage = false;
+ showNumberMessage = false;
+ showSymbolMessage = false;
+ showLetterMessage = false;
 
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({

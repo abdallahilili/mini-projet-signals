@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <div class="container my-4 bg bg-light p-2">
   <div mat class="card p-3 card-custom test-dark">
     <h2 class="txt-custom">Angular Signals</h2>
@@ -40,21 +41,35 @@
         <p>Comme vous pouvez le voir sur sur le schéma, les signaux fonctionnent
           complètement différemment. Vous avez un signal et des consommateurs de
           ce signal qui sont notifiés directement lorsque vous modifiez la
-          valeur.
-          <p class="alert alert-warning txt-custom">Avec les signaux, Angular
-            n'a pas besoin de parcourir tout l'arbre
-            pour vérifier si nous avons effectué des modifications.
-            <p> Cela doit amener nos applications à un niveau supérieur.</p>
-          </div>
+          valeur.</p>
+        <p class="alert alert-warning txt-custom">Avec les signaux, Angular
+          n'a pas besoin de parcourir tout l'arbre
+          pour vérifier si nous avons effectué des modifications.</p>
+        <p> Cela doit amener nos applications à un niveau supérieur.</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Utilisation des signaux</h2>
+    <br>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
         </div>
       </div>
-      <br>
-      <div mat class="card p-3 card-custom test-dark">
-        <h2 class="txt-custom">Utilisation des signaux</h2>
-        <br>
-        <div class="code-block">
-          <div class="code-block">
-            <pre>
+      <div class="code-block">
+        <pre>
             <span class="non-clair">export class BasicSignalComponent &#123;</span>
             compteur = signal(0);
             <span class="non-clair">increment(): void &#123;
@@ -64,14 +79,28 @@
             this.compteur.update(compteur => compteur - 1);
             &#125;
          &#125;</span></pre>
-          </div>
+      </div>
+    </div>
+    Voici comment créer un signal à l'intérieur d'un composant. <br>
+    Maintenant, ajoutons un bouton pour incrémenter la valeur de ce signal
+    et l'afficher dynamiquement. <br>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
         </div>
-        Voici comment créer un signal à l'intérieur d'un composant. <br>
-        Maintenant, ajoutons un bouton pour incrémenter la valeur de ce signal
-        et l'afficher dynamiquement. <br>
-        <div class="code-block">
-          <div class="code-block">
-            <pre>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.html">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
        <span class="non-clair">&lt;div class="container py-3 my-4 bg-white rounded "&gt;
         &lt;div class="row card p-4"&gt;
             &lt;div&gt;</span>
@@ -81,16 +110,30 @@
             &lt;/div&gt;
           &lt;/div&gt;
       &lt;/div&gt;</span></pre>
-          </div>
-        </div>
-        <p>Comme vous pouvez le voir, nous avons utilisé le signal compteur en
-          HTML avec des parenthèses. <br>
-          Nous l’avons donc appelé comme une fonction et c’est ainsi que l’on
-          obtient la valeur actuelle du signal.</p>
+      </div>
+    </div>
+    <p>Comme vous pouvez le voir, nous avons utilisé le signal compteur en
+      HTML avec des parenthèses. <br>
+      Nous l’avons donc appelé comme une fonction et c’est ainsi que l’on
+      obtient la valeur actuelle du signal.</p>
 
-        <div class="code-block">
-          <div class="code-block">
-            <pre>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
               <span class="non-clair">export class BasicSignalComponent &#123;</span>
               <span class="non-clair">compteur = signal(0);</span>
               increment(): void &#123;
@@ -100,30 +143,44 @@
               this.compteur.update(compteur => compteur - 1);
               &#125;
             <span class="non-clair">&#125;</span></pre>
-          </div>
-        </div>
-        <div>Ici, nous avons implémenté la méthode increment qui met à jour
-          notre signal. Comme vous pouvez le voir, nous utilisons .set pour
-          complètement remplacer la valeur actuelle dans le signal.
+      </div>
+    </div>
+    <div>Ici, nous avons implémenté la méthode increment qui met à jour
+      notre signal. Comme vous pouvez le voir, nous utilisons .set pour
+      complètement remplacer la valeur actuelle dans le signal.
 
-          Pour la méthode decrement, nous utilisons .update pour modifier la
-          valeur actuelle de manière incrémentale. </div>
-        <div class="text-end">
-          <a [routerLink]="['/basic-sig']" class="btn btn-voir-expl"
-            type="button">Voir la démo de l'exemple</a>
+      Pour la méthode decrement, nous utilisons .update pour modifier la
+      valeur actuelle de manière incrémentale. </div>
+    <div class="text-end">
+      <a [routerLink]="['/basic-sig']" class="btn btn-voir-expl"
+        type="button">Voir la démo de l'exemple</a>
+    </div>
+  </div>
+  <br>
+
+  <div mat class="card p-3 card-custom text-dark">
+    <h2 class="txt-custom">Writable signals</h2>
+    <br>
+    Créons maintenant un signal pour un tableau de cours dans CourseService
+    en utilisant
+    l'interface `ICourse` :
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/services/course.service.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
         </div>
       </div>
-      <br>
-
-      <div mat class="card p-3 card-custom text-dark">
-        <h2 class="txt-custom">Writable signals</h2>
-        <br>
-        Créons maintenant un signal pour un tableau de cours dans CourseService
-        en utilisant
-        l'interface `ICourse` :
-        <div class="code-block">
-          <div class="code-block">
-            <pre>
+      <div class="code-block">
+        <pre>
       <span class="non-clair">export class CourseService &#123;
             </span>coursesState = signal&lt;ICourse[]&gt;([]);
             
@@ -138,36 +195,64 @@
             return this.coursesState();
             &#125;
           &#125;</span></pre>
-          </div>
-        </div>
-        <div>Voici comment nous avons initialisé les valeurs des cours en
-          utilisant la méthode <strong>.set()</strong> <br>
-        </div>
+      </div>
+    </div>
+    <div>Voici comment nous avons initialisé les valeurs des cours en
+      utilisant la méthode <strong>.set()</strong> <br>
+    </div>
 
-        <div class="code-block">
-          <div class="code-block">
-            <pre>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/courses-crud/courses-crud.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
             <span class="non-clair">export class CoursesCrudComponent &#123;</span> 
               courses = this.courseService.coursesState;
               <span class="non-clair">constructor(private courseService: CourseService) &#123;&#125;
             &#125;</span></pre>
-          </div>
-        </div>
+      </div>
+    </div>
 
-        <div>
-          <p> accédons directement au signal coursesState du service
-            CourseService.</p>
-        </div>
-        <br><br>
-        <h2 class="txt-custom">Effets sur les signaux</h2>
-        <p>Les signaux sont utiles car ils avertissent les consommateurs
-          intéressés lorsqu'ils changent. Un effet est une opération qui
-          s'exécute chaque fois qu'une ou plusieurs valeurs de signal changent.
-          Vous pouvez créer un effet avec la fonction effect :</p>
+    <div>
+      <p> accédons directement au signal coursesState du service
+        CourseService.</p>
+    </div>
+    <br><br>
+    <h2 class="txt-custom">Effets sur les signaux</h2>
+    <p>Les signaux sont utiles car ils avertissent les consommateurs
+      intéressés lorsqu'ils changent. Un effet est une opération qui
+      s'exécute chaque fois qu'une ou plusieurs valeurs de signal changent.
+      Vous pouvez créer un effet avec la fonction effect :</p>
 
-        <div class="code-block">
-          <div class="code-block">
-            <pre>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/services/course.service.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
             <span class="non-clair">export class CourseService &#123;
             coursesState = signal&#91;ICourse&#93;(&#123;&#125;);
             
@@ -181,115 +266,50 @@
               &#41;&#41;; <span class="non-clair">
             &#125;
           &#125;</span></pre>
-          </div>
+      </div>
+    </div>
+    <p>Ici, nous avons défini un effet qui est déclenché après chaque
+      changement de signal</p>
+    <br>
+    <div class="text-end">
+      <a [routerLink]="['/courses']" class="btn btn-voir-expl"
+        type="button">Voir la démo de l'exemple</a>
+    </div>
+  </div>
+  <br>
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Computed</h2>
+    <br>
+    La dernière chose que vous devez savoir sur les signaux angulaires est
+    computed. Cela nous permet de créer de nouveaux signaux basés sur des
+    signaux existants.
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
         </div>
-        <p>Ici, nous avons défini un effet qui est déclenché après chaque
-          changement de signal</p>
-        <br>
-        <div class="text-end">
-          <a [routerLink]="['/courses']" class="btn btn-voir-expl"
-            type="button">Voir la démo de l'exemple</a>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/courses-crud/courses-crud.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
         </div>
       </div>
-      <br>
-      <div mat class="card p-3 card-custom test-dark">
-        <h2 class="txt-custom">Computed</h2>
-        <br>
-        La dernière chose que vous devez savoir sur les signaux angulaires est
-        computed. Cela nous permet de créer de nouveaux signaux basés sur des
-        signaux existants.
-        <div class="code-block">
-          <div class="code-block">
-            <pre>
+      <div class="code-block">
+        <pre>
             <span class="non-clair">export class CoursesCrudComponent &#123;</span> 
             courses = computed&lt;ICourse[]&gt;(() => this.courseService.getAllCourses());
             <span class="non-clair">constructor(private courseService: CourseService) &#123;&#125;
             &#125;</span></pre>
-          </div>
-        </div>
-        <p>Ici, nous avons défini un signal <strong>courses</strong> qui contient la liste de tous les cours. Cette liste est récupérée à travers la méthode getAllCourses de CourseService, et elle sera mise à jour automatiquement chaque fois que les données des cours changent.</p>
       </div>
-<!-- 
-      <br>
-      <div class="card-custom">
-        <div class="d-flex justify-content-between mb-3">
-          <button
-            mat-button
-            class="btn"
-            (click)="togglePanels(accordion)">
-            {{ isExpanded ? 'Réduire tout' : 'Développer tout' }}
-
-          </button>
-        </div>
-
-        <mat-accordion #accordion="matAccordion" class="example-headers-align"
-          multi>
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title style="width: 20px;"><h1>Angular
-                  Signals</h1></mat-panel-title>
-              <mat-panel-description>
-                Les Angular Signals sont un système qui suit finement
-                l’utilisation de
-                l’état à travers une application, permettant au framework
-                d’optimiser
-                les mises à jour de rendu.
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div class="row">
-              <div class="col-md-6">
-                <mat-form-field class="w-100">
-                  <mat-label>First name</mat-label>
-                  <input matInput />
-                </mat-form-field>
-              </div>
-              <div class="col-md-6">
-                <mat-form-field class="w-100">
-                  <mat-label>Age</mat-label>
-                  <input matInput type="number" min="1" />
-                </mat-form-field>
-              </div>
-            </div>
-          </mat-expansion-panel>
-
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>Destination</mat-panel-title>
-              <mat-panel-description>
-                Type the country name
-                <mat-icon>map</mat-icon>
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div class="row">
-              <div class="col-md-12">
-                <mat-form-field class="w-100">
-                  <mat-label>Country</mat-label>
-                  <input matInput />
-                </mat-form-field>
-              </div>
-            </div>
-          </mat-expansion-panel>
-
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>Day of the trip</mat-panel-title>
-              <mat-panel-description>
-                Inform the date you wish to travel
-                <mat-icon>date_range</mat-icon>
-              </mat-panel-description>
-            </mat-expansion-panel-header>
-            <div class="row">
-              <div class="col-md-12">
-                <mat-form-field class="w-100">
-                  <mat-label>Date</mat-label>
-                  <input matInput [matDatepicker]="picker"
-                    (focus)="picker.open()"
-                    readonly />
-                </mat-form-field>
-                <mat-datepicker #picker></mat-datepicker>
-              </div>
-            </div>
-          </mat-expansion-panel>
-        </mat-accordion>
-      </div> -->
     </div>
+    <p>Ici, nous avons défini un signal <strong>courses</strong> qui
+      contient la liste de tous les cours. Cette liste est récupérée à
+      travers la méthode getAllCourses de CourseService, et elle sera mise à
+      jour automatiquement chaque fois que les données des cours
+      changent.</p>
+  </div>
+</div>

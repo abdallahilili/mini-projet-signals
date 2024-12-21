@@ -1,1 +1,512 @@
-<p>angular-json works!</p>
+<!DOCTYPE html>
+<div class="container my-4 bg bg-light p-2">
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Fichier angular.json</h2>
+    <br>
+    Le fichier angular.json est un élément central dans un projet Angular. <br>
+    Il contient les configurations nécessaires pour gérer les projets, les
+    builds, les
+    schémas, et bien d'autres
+    paramètres.
+  </div>
+  <br>
+  <div mat class="card p-3 card-custom test-dark">
+    <h2 class="txt-custom">Structure et Contenu</h2>
+    <br>
+
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+              &#123;
+                  "$schema": "./node_modules/&#64;angular/cli/lib/config/schema.json",
+                  "version": 1,
+                  "newProjectRoot": "projects",
+                  <span class="non-clair">"projects": &#123;
+                    "mini-projet-signals": &#123;
+                      "projectType": "application",
+                      "schematics": &#123;&#125;,
+                      "root": "",
+                          ..... 
+                          &#125;
+                        &#125;
+                      &#125;</span></pre>
+      </div>
+    </div>
+    <ul>
+      <li>"<strong class="txt-custom">$schema</strong>" : Indique le chemin vers le fichier de schéma qui valide et
+        guide la structure du fichier angular.json.</li>
+        <li>"<strong class="txt-custom">version</strong>" : Spécifie la version du format utilisé pour ce fichier de
+        configuration (<i>ne pas utilisable par le développeur</i>).</li>
+        <li>"<strong class="txt-custom">newProjectRoot</strong>" : Définit le répertoire racine (projects) où les
+        nouveaux projets Angular seront créés. ( <i>on peut modifier cette
+          valeur pour changer l'emplacement des nouveaux projets.</i> )</li>
+    </ul>
+
+    <br><br>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+            <span class="non-clair">&#123;
+                "$schema": "./node_modules/&#64;angular/cli/lib/config/schema.json",
+                "version": 1,
+                "newProjectRoot": "projects",</span>
+                "projects": &#123;
+                  "mini-projet-signals": &#123;
+                    "projectType": "application",
+                    "schematics": &#123;&#125;,
+                    "root": "",
+                    "sourceRoot": "src",
+                    "prefix": "app",
+                    "architect": &#123;
+                      "build": &#123;
+                        "builder": "$#64;angular-devkit/build-angular:application",
+                    <span class="non-clair">   ..... 
+                         &#125;
+                        &#125;
+                      &#125;
+                    &#125;</span></pre>
+      </div>
+    </div>
+    <ul>
+      <li>"<strong class="txt-custom">projects</strong>" : La section projects
+        contient tous vos projets Angular (au cas où vous travailleriez avec
+        plusieurs applications ou bibliothèques). Chaque projet aura sa propre
+        configuration.</li>
+      <li>"<strong class="txt-custom">projectType</strong>" : Indique le type de
+        projet, généralement "application" pour une application Angular ou
+        "library" pour une bibliothèque.</li>
+      <li>"<strong class="txt-custom">schematics</strong>" : Configure les
+        générateurs de code (comme les composants, services, etc.) pour
+        appliquer des options ou des comportements par défaut lors de leur
+        création.</li>
+      <li>"<strong
+          class="txt-custom">root</strong>" :  Dpécifie le chemin racine du projet par rapport au workspace, généralement vide ("")
+        pour les projets situés à la racine. ( <i>ce champ est automatiquement
+          défini lors de la création du projet et ne nécessite pas de
+          modification manuelle.</i> )</li>
+      <li>"<strong class="txt-custom">sourceRoot</strong>" : Définit le chemin
+        vers le répertoire contenant les fichiers source du projet (par défaut,
+        src).</li>
+      <li>"<strong class="txt-custom">prefix</strong>" : Définit le préfixe
+        utilisé pour les balises HTML des composants Angular. </li>
+      <li>"<strong class="txt-custom">architect</strong>" : Contient les
+        configurations pour les différentes cibles (build, test, lint, etc.) du
+        projet Angular.</li>
+      <li>"<strong class="txt-custom">build</strong>" : Céfinit les options et
+        les configurations pour le processus de build de l'application (par
+        exemple, les paramètres de production, le minification, etc.).</li>
+      <li>"<strong class="txt-custom">builder</strong>" : spécifie le nom du
+        builder utilisé pour le processus de build ,(généralement
+        &#64;angular-devkit/build-angular:application ou similaire comme
+        (&#64;angular-builders/custom-webpack:browser)).</li>
+    </ul>
+    <br>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+            <span class="non-clair">&#123;
+                   ...
+                    "architect": &#123;
+                      "build": &#123;
+                        "builder": "$#64;angular-devkit/build-angular:application",</span>
+                        "options": &#123;
+                          "outputPath": "dist/mini-projet-signals",
+                          "index": "src/index.html",
+                          "browser": "src/main.ts",
+                          "polyfills": [
+                            "zone.js"
+                          ],
+                          "tsConfig": "tsconfig.app.json",
+                          "assets": [
+                            "src/favicon.ico",
+                            "src/assets",
+                            &#123;
+                              "glob": "**/*",
+                              "input": "public" 
+                              &#125;
+                          ],
+                          "styles": [
+                            "&#64;/material/prebuilt-themes/azure-blue.css",
+                            "src/styles.css",
+                            "node_modules/bootstrap/dist/css/bootstrap.css",
+                            "node_modules/&#64;/fontawesome-free/css/all.css"
+                          ],
+                          "scripts": [
+                            
+                          ],
+                          "server": "src/main.server.ts",
+                          "outputMode": "server",
+                          "ssr": &#123;
+                            "entry": "src/server.ts"
+                            &#125;
+                          &#125;,
+                    <span class="non-clair">   ..... 
+                         &#125;
+                        &#125;
+                      &#125;
+                    &#125;</span></pre>
+      </div>
+    </div>
+    <ul>
+      <li>"<strong class="txt-custom">options</strong>" : contient les
+        configurations spécifiques au processus de build d'une application
+        Angular, comme les chemins, les fichiers sources, les styles, et les
+        options pour le serveur.</li>
+      <li>"<strong class="txt-custom">outputPath</strong>" : spécifie le chemin
+        où les fichiers de production (dist) seront générés.</li>
+      <li>"<strong class="txt-custom">index</strong>" : indique le chemin vers
+        le fichier index.html utilisé comme point d'entrée pour
+        l'application.</li>
+      <li>"<strong class="txt-custom">browser</strong>" : spécifie le fichier
+        TypeScript utilisé comme point d'entrée principal pour le
+        navigateur.</li>
+      <li>"<strong class="txt-custom">polyfills</strong>" : liste les
+        bibliothèques ou modules qui doivent être chargés en premier pour
+        assurer la compatibilité avec les navigateurs anciens.</li>
+      <li>"<strong class="txt-custom">tsConfig</strong>" : spécifie le chemin
+        vers le fichier tsconfig utilisé pour le projet, définissant les options
+        de compilation TypeScript.</li>
+      <li>"<strong class="txt-custom">assets</strong>" : liste les fichiers et
+        répertoires à inclure dans le build, comme les favicon, les images, et
+        d'autres ressources statiques.</li>
+      <li>"<strong class="txt-custom">glob</strong>" : spécifie un modèle de
+        chemin pour inclure des fichiers lors du build (par exemple, **/* pour
+        tout fichier).</li>
+      <li>"<strong class="txt-custom">input</strong>" : indique le chemin
+        d'entrée des fichiers que l'on souhaite inclure dans le build (par
+        exemple, public pour le dossier public).</li>
+      <li>"<strong class="txt-custom">styles</strong>" : liste les feuilles de
+        styles CSS à inclure dans le build de l'application.</li>
+      <li>"<strong class="txt-custom">scripts</strong>" : liste les fichiers
+        JavaScript à inclure dans le build, comme des bibliothèques ou des
+        scripts supplémentaires.</li>
+      <li>"<strong class="txt-custom">server</strong>" : indique le fichier
+        TypeScript utilisé comme point d'entrée pour le serveur, souvent utilisé
+        dans des configurations SSR (server-side rendering).</li>
+      <li>"<strong class="txt-custom">outputMode</strong>" : définit le mode de
+        sortie pour le build (par exemple, "server" pour les configurations
+        SSR).</li>
+      <li>"<strong class="txt-custom">ssr</strong>" : contient les
+        configurations spécifiques pour le serveur-side rendering (SSR), comme
+        l'entrée du serveur.</li>
+      <li>"<strong class="txt-custom">entry</strong>" : spécifie le fichier
+        TypeScript utilisé comme point d'entrée pour le serveur dans le cadre du
+        SSR.</li>
+
+    </ul>
+    <br>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+            <span class="non-clair">&#123;
+                   ...
+                    "architect": &#123;
+                      "build": &#123;
+                        "builder": "$#64;angular-devkit/build-angular:application",
+                        "options": &#123;
+                          ...
+                          &#125;,</span>
+                          "configurations": &#123;
+                            "production": &#123;
+                              "budgets": [
+                              &#123;
+                                  "type": "initial",
+                                  "maximumWarning": "500kB",
+                                  "maximumError": "1MB"
+                                  &#125;,
+                                &#123;
+                                  "type": "anyComponentStyle",
+                                  "maximumWarning": "4kB",
+                                  "maximumError": "8kB"
+                               &#125;
+                              ],
+                              "outputHashing": "all"
+                              &#125;,
+                            "development": &#123;
+                              "optimization": false,
+                              "extractLicenses": false,
+                              "sourceMap": true 
+                              &#125;
+                            &#125;,
+                          "defaultConfiguration": "production"
+                    <span class="non-clair">   ..... 
+                         &#125;
+                        &#125;
+                      &#125;
+                    &#125;</span></pre>
+      </div>
+    </div>
+    <ul>
+      <li>"<strong class="txt-custom">configurations</strong>" : définit les
+        options spécifiques pour le build en production et en développement,
+        telles que les budgets de taille, le hachage des fichiers, et les
+        optimisations.</li>
+      <li>"<strong class="txt-custom">production</strong>" : contient les
+        paramètres spécifiques pour le build en mode production, comme les
+        budgets de taille et le hachage des fichiers.</li>
+      <li>"<strong class="txt-custom">budgets</strong>" : définit les limites de
+        taille pour le code initial et les styles, en générant des
+        avertissements ou des erreurs si les seuils sont dépassés.</li>
+      <li>"<strong class="txt-custom">type</strong>" : spécifie le type de
+        ressource pour laquelle le budget est appliqué, par exemple initial pour
+        le code initial ou anyComponentStyle pour les styles.</li>
+      <li>"<strong class="txt-custom">maximumWarning</strong>" : définit la
+        taille limite pour laquelle un avertissement sera déclenché si
+        dépassée.</li>
+      <li>"<strong class="txt-custom">maximumError</strong>" : définit la taille
+        limite au-delà de laquelle une erreur sera déclenchée, empêchant le
+        build de passer en production si elle est dépassée.</li>
+      <li>"<strong class="txt-custom">outputHashing</strong>" : définit le mode
+        de hachage des fichiers de sortie (comme all, media, ou bundles) pour
+        forcer des noms uniques des fichiers lors de chaque build.</li>
+      <li>"<strong class="txt-custom">development</strong>" : contient les
+        paramètres spécifiques pour le build en mode développement, comme la
+        désactivation de l'optimisation, l'extraction des licences, et
+        l'activation des sourcemaps.</li>
+      <li>"<strong class="txt-custom">optimization</strong>" : indique si les
+        optimisations (comme le minification, le tree-shaking) doivent être
+        activées ou non en mode développement.</li>
+      <li>"<strong class="txt-custom">extractLicenses</strong>" : indique si les
+        licences des dépendances doivent être extraites et ajoutées aux builds
+        en mode développement.</li>
+      <li>"<strong class="txt-custom">sourceMap</strong>" : indique si les
+        fichiers source map doivent être générés pour le débogage en mode
+        développement.</li>
+      <li>"<strong class="txt-custom">defaultConfiguration</strong>" : définit
+        la configuration par défaut à utiliser pour le build (par exemple,
+        production ou development).</li>
+    </ul>
+    <br>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+            <span class="non-clair">&#123;
+                   ...
+                    "architect": &#123;
+                      "build": &#123;
+                        "builder": "$#64;angular-devkit/build-angular:application",
+                        "options": &#123;
+                          ...
+                          &#125;,
+                          "configurations": &#123;
+                            ...
+                            &#125;,
+                          "defaultConfiguration": "production"</span>
+                          "serve": &#123;
+                            "builder": "&#64;angular-devkit/build-angular:dev-server",
+                            "configurations": &#123;
+                              "production": &#123;
+                                "buildTarget": "mini-projet-signals:build:production"
+                                &#125;,
+                              "development": &#123;
+                                "buildTarget": "mini-projet-signals:build:development"
+                            &#125;
+                          &#125;,
+                            "defaultConfiguration": "development"
+                            &#125;,
+                          "extract-i18n": &#123;
+                            "builder": "&#64;/build-angular:extract-i18n"
+                          &#125;,
+
+                    <span class="non-clair">   ..... 
+                         &#125;
+                        &#125;
+                      &#125;
+                    &#125;</span></pre>
+      </div>
+    </div>
+    <ul><li>Ce bloc définit les configurations pour le serveur de développement,
+        indiquant les cibles de build à utiliser pour les modes de production et
+        de développement.</li></ul>
+    <br>
+
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+            <span class="non-clair">&#123;
+                   ...
+                    "architect": &#123;
+                      "build": &#123;
+                        "builder": "$#64;angular-devkit/build-angular:application",
+                        "options": &#123;
+                          ...
+                          &#125;,
+                          "configurations": &#123;
+                            ...
+                            &#125;,
+                          "defaultConfiguration": "production"
+                          "serve": &#123;
+                            ...
+                          &#125;,</span>
+                          "test": &#123;
+                            "builder": "&#64;angular-devkit/build-angular:karma",
+                            "options": &#123;
+                              "polyfills": [
+                                "zone.js",
+                                "zone.js/testing"
+                              ],
+                              "tsConfig": "tsconfig.spec.json",
+                              "assets": [
+                              &#123;
+                                  "glob": "**/*",
+                                  "input": "public"
+                                  &#125;
+                              ],
+                              "styles": [
+                                "&#64;/material/prebuilt-themes/azure-blue.css",
+                                "src/styles.css"
+                              ],
+                              "scripts": []
+                            &#125;
+                          &#125;
+                    <span class="non-clair">   ..... 
+                         &#125;
+                        &#125;
+                      &#125;
+                    &#125;</span></pre>
+      </div>
+    </div>
+    <ul><li>Le champ "test" configure les options pour la tâche de test avec
+        Karma, incluant les polyfills, les fichiers TypeScript, et les styles.
+        <br>
+        les développeurs peuvent ajuster ces options pour personnaliser les
+        configurations de test selon leurs besoins.</li></ul>
+    <br>
+    <div class="code-block">
+      <div
+        style="display: flex; width: 100%; background-color: rgb(68, 68, 75); color: white; font-family: 'Times New Roman', Times, serif; font-size: 15px;">
+        <div style="flex: 1; text-align: left; padding: 10px;">
+          <span>code : </span>
+        </div>
+        <div style="text-align: right; padding: 10px;">
+          <a class="link" target="_blank"
+            href="https://github.com/abdallahilili/mini-projet-signals/blob/master/src/app/writable-signal/basic-signal/basic-signal.component.ts">
+            <span>voir code complet</span>
+            <mat-icon
+              style="font-size: 18px; vertical-align: middle; margin-left: 5px; margin-top: 4px">link</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div class="code-block">
+        <pre>
+            <span class="non-clair">&#123;
+                   ...
+                    "architect": &#123;
+                      "build": &#123;
+                        "builder": "$#64;angular-devkit/build-angular:application",
+                        "options": &#123;
+                          ...
+                          &#125;,
+                          "configurations": &#123;
+                            ...
+                            &#125;,
+                          "defaultConfiguration": "production"
+                          "serve": &#123;
+                            ...
+                          &#125;,
+                          "test": &#123;
+                            ...
+                            &#125;
+                          &#125;</span>
+                          "cli": &#123;
+                            "analytics": false
+                            &#125;
+                          <span class="non-clair">&#125;
+                        &#125;
+                      &#125;
+                    &#125;</span></pre>
+      </div>
+    </div>
+    <ul><li>Le champ "analytics" désactive ou active les données d'analytics
+        envoyées à Angular pour le suivi des utilisateurs et des
+        performances.</li></ul>
+    <br>
+
+    <br>
+
+  </div>
+</div>

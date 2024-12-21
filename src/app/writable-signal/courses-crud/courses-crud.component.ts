@@ -30,7 +30,7 @@ coursesCmoputed = computed(() => {
 updateSearchText(searchText: string,): void {
   this.searchText.set(searchText);
 }
-
+// courses = this.courseService.coursesState; // avant comptud
 courses = computed<ICourse[]>(() => this.courseService.getAllCourses());
 
   constructor(private courseService: CourseService) {}
