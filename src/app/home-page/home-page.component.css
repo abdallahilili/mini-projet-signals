@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+/* @import url('https://fonts.googleapis.com/css?family=Anonymous+Pro'); */
 
 .btn-custom {
     background: linear-gradient(to right, #051eac, #4c74e0, #0f3896);
@@ -79,7 +79,6 @@
     font-size: 69px;
     font-weight: bold;
     font-family: 'Anonymous Pro', monospace;
-
 }
 
 @media (max-width: 992px) {
